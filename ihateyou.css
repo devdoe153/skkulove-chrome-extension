@@ -1,0 +1,12 @@
+.ihate_history {
+	float: fixed;
+	left: 0px;
+	top: 0px;
+	width: 200px;
+	border: solid red 1px;
+
+}
+
+.ihate_history_hidden {
+	display: none;
+}

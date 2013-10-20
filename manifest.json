@@ -1,0 +1,27 @@
+{
+  // Required
+  "manifest_version": 2,
+  "name": "SkkuLove Plugin",
+  "version": "1.0",
+  "description": "성새사랑 플러그인",
+  "icons": { "128": "sl_icon128.png" },
+  "background": {
+    "scripts": ["database_io.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.skkulove.com/ver3/bbs/board.php?bo_table=*"],
+      "js": ["ihateyou.js"],
+      "run_at" : "document_end"
+    },
+    {
+      "matches": ["http://www.skkulove.com/ver3*"],
+      "js": ["auto_login.js"]
+    }   
+  ],
+  "app": {
+    "launch": {
+      "local_path": "sl_option.html"
+    }
+  }
+}

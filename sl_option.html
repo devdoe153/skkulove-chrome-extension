@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>SL option</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<h2 class="text-center">Options</h2>
+			<hr>
+			<form class="form-inline">
+				<h3>강제로그인</h3>
+				<div class="form-group">
+					<div class="checkbox">
+						<label>
+							<input id="auto_chk" type="checkbox" value="">
+							켜기
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<input id="auto_id" class="form-control" type="text" placeholder="enter id"></input>
+				</div>
+				<div class="form-group">
+					<input id="auto_pw"  class="form-control" type="password" placeholder="enter password"></input>
+				</div>
+				<div class="form-group">
+					<button id="auto_btn" type="button" class="btn btn-success">저장</button>
+				</div>
+				<div id="auto_msg" class="form-group"></div>
+			</form>
+			<div class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<strong>주의!</strong> <br>
+				켜기 상태에서 id나 password 가 틀렸거나 입력되지 않았을경우 무한 리프레시 될 가능성이 있습니다.
+			</div>
+			<hr>
+			<form class="form-inline">
+				<h3>너 싫어!</h3>
+				<div class="form-group">
+					<input id="hate_id" class="form-control" type="text" placeholder="enter id"></input>
+				</div>
+				<div class="form-group">
+					<button id="hate_btn" type="button" class="btn btn-success">저장</button>
+				</div>
+			</form>
+			<ul id="ihate_list" class="list-group"></ul>
+			<div class="alert alert-info">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<strong>차단할 ID를 입력하세요</strong> <br>
+				닉네임이 아니라 ID를 입력하여야 합니다. ID를 확인하는 방법은 닉네임 위에 커서를 올렸을때 [ ] 괄호 사이에 있는 영문자 입니다. 혹은 닉네임을 클릭하여 '아이디로 검색'을 누르면 해당 ID로 검색을 하게 됩니다. 이 스크립트는 단지 숨겨주는 역할만 할뿐이지 실제로 서버와 어떠한 통신도 하지 않습니다.
+			</div>
+			<hr>
+			<form class="form-inline">
+				<h3>나는 기억한다. 고로...</h3>
+				<div class="input-group">
+					<input id="history_search" class="form-control" type="text" placeholder="검색어를 입력하세요"></input>
+					<span class="input-group-btn">
+						<button id="history_search_btn" type="button" class="btn btn-success">검색</button>
+					</span>
+				</div>	
+			</form>
+			<div id="history_list" class="list-group"></div>
+			<table id="history_result"></table>
+			<div class="alert alert-info">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<strong>검색성능에 대해..</strong> <br>
+				검색엔진와는 달리 정교하지 않습니다. 공백으로 구분된 Keyword들을 AND 검색만 실시합니다. 
+				즉 검색결과는 공백으로 구분된 검색어들이 모두 포함된 것입니다. 
+				형태소 분석기능이나 따로 인덱싱을 하지 않기 때문에 부정확하고 속도가 느릴가능성이 있습니다.
+			</div>			
+		</div>
+	</div>
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="sl_option.js"></script>
+</body>
+</html>
