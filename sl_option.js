@@ -98,6 +98,8 @@
 	// 히스토리 검색
 	var history_search     = document.querySelector('#history_search');
 	var history_search_btn = document.querySelector('#history_search_btn');
+	var history_del        = document.querySelector('#history_del');
+
 
 	history_search_btn.addEventListener('click', function(){
 		chrome.runtime.sendMessage({
@@ -155,6 +157,21 @@
 			}
 			fetch();
 		});
+	}, false);
+
+
+	history_del.addEventListener('click', function(){
+		chrome.runtime.sendMessage({
+			'serv' : 'history',
+			'cmd'  : 'del_all'
+		}, function(response){
+			var msg = document.querySelector('#his_msg');
+			msg.innerHTML = '삭제완료되었습니다...';
+			setTimeout(function(){
+				msg.innerHTML = '';
+			}, 1000);
+		}); 
+
 	}, false);
 
 })();

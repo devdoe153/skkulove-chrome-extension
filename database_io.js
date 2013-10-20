@@ -149,6 +149,14 @@
 					fetch_on = true;
 					sendResponse(parseInt(Math.random()*100000));
 				}
+				if(request.cmd == 'del_all'){
+					db.transaction(function(tx){
+						tx.executeSql('DELETE FROM sl_hist');
+					}, function(err, commited, snapshot){
+						console.log(err);
+					});
+					sendResponse(parseInt(Math.random()*100000));
+				}
 				if(request.cmd == 'fetched'){
 					if(fetch_on == true){
 						sendResponse({list: null, fetch_on: true});
